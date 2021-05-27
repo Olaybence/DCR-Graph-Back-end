@@ -23,12 +23,44 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 public class GraphResource {
 
 	@Autowired
-	private GraphHardcodedService graphService;
+	private GraphServiceLocal graphService;
+	@Autowired
+	private GraphServiceShared graphServiceShared;
 		
+	
+	@GetMapping("/local")
+	public List<Graph> getAllLocalGraphs() {
+		return graphService.findAll();
+	}
+	
+	@GetMapping("/shared")
+	public List<Graph> getAllSharedGraphs() {
+		return graphServiceShared.findAll();
+	}
+	
+	
+	@GetMapping("/local/{id}")
+	public Graph getLocalGraph(@PathVariable long id) {
+		return graphService.findById(id);
+	}
+	
+	
+	@GetMapping("/shared/{id}")
+	public Graph getSharedGraph(@PathVariable long id) {
+		return graphServiceShared.findById(id);
+	}
+	
+	
+	//
+	//
+	//The following are placeholder functions
+	//
+	//
 	@GetMapping("/select")
 	public List<Graph> getAllGraphs() {
 		return graphService.findAll();
 	}
+	
 		
 	@GetMapping("/edit/{location}/{graphID}")
 	public Graph getGraph(@PathVariable String location, @PathVariable long graphID) {
@@ -54,7 +86,7 @@ public class GraphResource {
 	public ResponseEntity<Void> updateGraph(@RequestBody Graph graph) {
 		Graph createdGraph = graphService.save(graph);
 		
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{graphID}").buildAndExpand(createdGraph.getGraphID()).toUri();
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{graphID}").buildAndExpand(createdGraph.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
 		
