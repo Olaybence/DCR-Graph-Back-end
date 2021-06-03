@@ -1,7 +1,8 @@
 package com.DCR.rest.webservices.restfulwebservices.graph;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -15,11 +16,11 @@ public class GraphServiceLocal {
 	private static int idCounter = 0;	
 	
 	static {
-		graphsLocal.add(new Graph(0, "Lorem ipsum dolor sit amet", "desciption", "Vestibulum iaculis enim, consectetur adipiscing elit. Aenean porttitor.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
-		graphsLocal.add(new Graph(1, "Praesent a velit", "desciption", "Sed volutpat venenatis sollicitudin. Sed bibendum, massa non ultrices pharetra.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
-		graphsLocal.add(new Graph(2, "Cras ultricies sem", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
-		graphsLocal.add(new Graph(2, "Cras ultricies sem", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
-		graphsLocal.add(new Graph(2, "Cras ultricies sem", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsLocal.add(new Graph(0, "Lorem ipsum dolor sit amet", LocalDate.of(2021, 05, 05), LocalDateTime.now(), "desciption", "Vestibulum iaculis enim, consectetur adipiscing elit. Aenean porttitor.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsLocal.add(new Graph(1, "Praesent a velit", LocalDate.of(2021, 01, 01), LocalDateTime.now(), "desciption", "Sed volutpat venenatis sollicitudin. Sed bibendum, massa non ultrices pharetra.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsLocal.add(new Graph(2, "Cras ultricies sem", LocalDate.of(2021, 03, 03), LocalDateTime.now(), "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsLocal.add(new Graph(2, "Cras ultricies sem", LocalDate.of(2021, 03, 03), LocalDateTime.now(), "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsLocal.add(new Graph(2, "Cras ultricies sem", LocalDate.of(2021, 03, 03), LocalDateTime.now(), "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
 	}
 
 	public List<Graph> findAll() {

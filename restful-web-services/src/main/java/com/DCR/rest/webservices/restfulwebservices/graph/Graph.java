@@ -1,7 +1,8 @@
 package com.DCR.rest.webservices.restfulwebservices.graph;
 
-import java.util.Date;
 import java.util.List;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 public class Graph {
@@ -23,6 +24,8 @@ public class Graph {
 	private long id;
 	private Location location;
 	private String name;
+	private LocalDate creationDate;
+	private LocalDateTime lastOpened;
 	private String description;
 	private String shortDescription;
 	private List<String> comments;
@@ -37,20 +40,20 @@ public class Graph {
 			
 	
 	//public Graph(long graphID, String username, long creatorID, String description, Date creationDate, Date lastOpened, List collaborators, List graphRelationData, List changeLog) {
-	public Graph(long id, String name, String description, String shortDescription, List<String> comments, 
+	public Graph(long id, String name, LocalDate creationDate, LocalDateTime lastOpened, String description, String shortDescription, List<String> comments, 
 			List<String> collaborators, List<String> roles, long startRoles, List<String> nodes, Location location) {	
 		super();
 		//this.graphID = graphID;
 		//this.username = username;
 		//this.creatorID = creatorID;
 		//this.description = description;
-		//this.creationDate = creationDate;
-		//this.lastOpened = lastOpened;
 		//this.collaborators = collaborators;
 		//this.graphRelationData = graphRelationData;
 		//this.changeLog = changeLog;
 		this.id = id;
 		this.name = name;
+		this.creationDate = creationDate;
+		this.lastOpened = lastOpened;
 		this.description = description;
 		this.shortDescription = shortDescription;
 		this.comments = comments;
@@ -76,22 +79,6 @@ public class Graph {
 
 	//public void setCreatorID(long creatorID) {
 	//	this.creatorID = creatorID;
-	//}
-
-	//public Date getCreationDate() {
-	//	return creationDate;
-	//}
-
-	//public void setCreationDate(Date creationDate) {
-	//	this.creationDate = creationDate;
-	//}
-
-	//public Date getLastOpened() {
-	//	return lastOpened;
-	//}
-
-	//public void setLastOpened(Date lastOpened) {
-	//	this.lastOpened = lastOpened;
 	//}
 
 	//public List getCollaborators() {
@@ -156,6 +143,22 @@ public class Graph {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public LocalDate getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(LocalDate creationDate) {
+		this.creationDate = creationDate;
+	}
+	
+	public LocalDateTime getLastOpened() {
+		return lastOpened;
+	}
+
+	public void setLastOpened(LocalDateTime lastOpened) {
+		this.lastOpened = lastOpened;
 	}
 
 

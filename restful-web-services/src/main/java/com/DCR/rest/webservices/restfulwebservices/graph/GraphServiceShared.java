@@ -1,7 +1,8 @@
 package com.DCR.rest.webservices.restfulwebservices.graph;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -15,9 +16,9 @@ public class GraphServiceShared {
 	private static int idCounter = 0;	
 	
 	static {
-		graphsShared.add(new Graph(0, "Sed vel ultrices", "desciption", "Mauris elit metus, posuere quis nisi a, sodales ornare odio.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
-		graphsShared.add(new Graph(1, "Etiam turpis nibh, pellentesque", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
-		graphsShared.add(new Graph(2, "Maecenas et pellentesque nunc", "desciption", "Etiam aliquet, sem non finibus imperdiet, sapien elit suscipit urna.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsShared.add(new Graph(0, "Sed vel ultrices", LocalDate.of(2020, 06, 06), LocalDateTime.now(), "desciption", "Mauris elit metus, posuere quis nisi a, sodales ornare odio.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsShared.add(new Graph(1, "Etiam turpis nibh, pellentesque", LocalDate.of(2020, 06, 06), LocalDateTime.now(), "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsShared.add(new Graph(2, "Maecenas et pellentesque nunc", LocalDate.of(2020, 06, 06), LocalDateTime.now(), "desciption", "Etiam aliquet, sem non finibus imperdiet, sapien elit suscipit urna.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
 	}
 		
 	public List<Graph> findAll() {
