@@ -3,7 +3,12 @@ package com.DCR.rest.webservices.restfulwebservices.graph;
 import java.util.Date;
 import java.util.List;
 
+
 public class Graph {
+	public enum Location {
+		LOCAL,
+		SHARED
+	};
 	
 	// private long graphID;
 	//private String username;
@@ -16,6 +21,7 @@ public class Graph {
 	//private List changeLog;
 	
 	private long id;
+	private Location location;
 	private String name;
 	private String description;
 	private String shortDescription;
@@ -31,7 +37,8 @@ public class Graph {
 			
 	
 	//public Graph(long graphID, String username, long creatorID, String description, Date creationDate, Date lastOpened, List collaborators, List graphRelationData, List changeLog) {
-	public Graph(long id, String name, String description, String shortDescription, List<String> comments, List<String> collaborators, List<String> roles, long startRoles, List<String> nodes) {	
+	public Graph(long id, String name, String description, String shortDescription, List<String> comments, 
+			List<String> collaborators, List<String> roles, long startRoles, List<String> nodes, Location location) {	
 		super();
 		//this.graphID = graphID;
 		//this.username = username;
@@ -51,7 +58,7 @@ public class Graph {
 		this.roles = roles;
 		this.startRoles = startRoles;
 		this.nodes = nodes;
-		
+		this.location = location;
 	}
 	
 	

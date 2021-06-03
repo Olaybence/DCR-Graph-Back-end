@@ -15,9 +15,9 @@ public class GraphServiceShared {
 	private static int idCounter = 0;	
 	
 	static {
-		graphsShared.add(new Graph(0, "Sed vel ultrices", "desciption", "Mauris elit metus, posuere quis nisi a, sodales ornare odio.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList()));
-		graphsShared.add(new Graph(1, "Etiam turpis nibh, pellentesque", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList()));
-		graphsShared.add(new Graph(2, "Maecenas et pellentesque nunc", "desciption", "Etiam aliquet, sem non finibus imperdiet, sapien elit suscipit urna.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList()));
+		graphsShared.add(new Graph(0, "Sed vel ultrices", "desciption", "Mauris elit metus, posuere quis nisi a, sodales ornare odio.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsShared.add(new Graph(1, "Etiam turpis nibh, pellentesque", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsShared.add(new Graph(2, "Maecenas et pellentesque nunc", "desciption", "Etiam aliquet, sem non finibus imperdiet, sapien elit suscipit urna.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
 	}
 		
 	public List<Graph> findAll() {

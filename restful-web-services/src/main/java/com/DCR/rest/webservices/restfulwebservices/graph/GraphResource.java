@@ -51,8 +51,16 @@ public class GraphResource {
 	}
 	
 	
-	@PostMapping("/local")
-	public ResponseEntity<Void> updateGraphPost(@RequestBody Graph graph) {
+	@PostMapping("/local/{id}")
+	public ResponseEntity<Void> updateGraphPostLocal(@RequestBody Graph graph) {
+		Graph createdGraph = graphService.save(graph);
+		
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createdGraph.getId()).toUri();
+		return ResponseEntity.created(uri).build();
+	}
+	
+	@PostMapping("/shared/{id}")
+	public ResponseEntity<Void> updateGraphPostShared(@RequestBody Graph graph) {
 		Graph createdGraph = graphService.save(graph);
 		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createdGraph.getId()).toUri();

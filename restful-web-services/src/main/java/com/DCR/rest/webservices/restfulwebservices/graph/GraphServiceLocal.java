@@ -15,11 +15,13 @@ public class GraphServiceLocal {
 	private static int idCounter = 0;	
 	
 	static {
-		graphsLocal.add(new Graph(0, "Lorem ipsum dolor sit amet", "desciption", "Vestibulum iaculis enim, consectetur adipiscing elit. Aenean porttitor.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList()));
-		graphsLocal.add(new Graph(1, "Praesent a velit", "desciption", "Sed volutpat venenatis sollicitudin. Sed bibendum, massa non ultrices pharetra.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList()));
-		graphsLocal.add(new Graph(2, "Cras ultricies sem", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList()));
+		graphsLocal.add(new Graph(0, "Lorem ipsum dolor sit amet", "desciption", "Vestibulum iaculis enim, consectetur adipiscing elit. Aenean porttitor.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsLocal.add(new Graph(1, "Praesent a velit", "desciption", "Sed volutpat venenatis sollicitudin. Sed bibendum, massa non ultrices pharetra.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsLocal.add(new Graph(2, "Cras ultricies sem", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsLocal.add(new Graph(2, "Cras ultricies sem", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
+		graphsLocal.add(new Graph(2, "Cras ultricies sem", "desciption", "Nunc faucibus nunc et est placerat vestibulum. Donec tempus bibendum.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new ArrayList(),Graph.Location.LOCAL));
 	}
-		
+
 	public List<Graph> findAll() {
 		return graphsLocal;
 	}
