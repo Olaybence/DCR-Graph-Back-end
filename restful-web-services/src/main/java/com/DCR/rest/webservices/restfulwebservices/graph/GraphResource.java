@@ -51,6 +51,20 @@ public class GraphResource {
 	}
 	
 	
+	@PostMapping("/local")
+	public ResponseEntity<Void> updateGraphPost(@RequestBody Graph graph) {
+		Graph createdGraph = graphService.save(graph);
+		
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createdGraph.getId()).toUri();
+		return ResponseEntity.created(uri).build();
+	}
+	
+	@PutMapping("/local")
+	public ResponseEntity<Graph> updateGraphPut(@RequestBody Graph graph) {
+		Graph graphUpdated = graphService.save(graph);
+		return new ResponseEntity<Graph>(graph, HttpStatus.OK);
+	}
+	
 	//
 	//
 	//The following are placeholder functions
@@ -77,13 +91,13 @@ public class GraphResource {
 	}
 		
 	@PutMapping("/edit/{location}/{graphID}")
-	public ResponseEntity<Graph> updateGraph(@PathVariable String location, @PathVariable long graphID, @RequestBody Graph graph) {
+	public ResponseEntity<Graph> updateGraphOld(@PathVariable String location, @PathVariable long graphID, @RequestBody Graph graph) {
 		Graph graphUpdated = graphService.save(graph);
 		return new ResponseEntity<Graph>(graph, HttpStatus.OK);
 	}
 		
 	@PostMapping("/select")
-	public ResponseEntity<Void> updateGraph(@RequestBody Graph graph) {
+	public ResponseEntity<Void> updateGraphOld(@RequestBody Graph graph) {
 		Graph createdGraph = graphService.save(graph);
 		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{graphID}").buildAndExpand(createdGraph.getId()).toUri();
