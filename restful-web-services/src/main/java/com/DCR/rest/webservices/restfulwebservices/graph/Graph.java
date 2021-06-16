@@ -32,8 +32,8 @@ public class Graph {
 	private List<String> collaborators;
 	private List<String> roles;
 	private long startRoles;
-	private Node nodes;
-	private Link links;
+	private List<Node> nodes;
+	private List<Link> links;
 	
 	protected Graph() {
 		
@@ -42,7 +42,7 @@ public class Graph {
 	
 	//public Graph(long graphID, String username, long creatorID, String description, Date creationDate, Date lastOpened, List collaborators, List graphRelationData, List changeLog) {
 	public Graph(long id, String name, LocalDate creationDate, LocalDateTime lastOpened, String description, String shortDescription, List<String> comments, 
-			List<String> collaborators, List<String> roles, long startRoles, Node nodes, Link links, Location location) {	
+			List<String> collaborators, List<String> roles, long startRoles, List<Node> nodes, List<Link> links, Location location) {	
 		super();
 		//this.graphID = graphID;
 		//this.username = username;
@@ -234,22 +234,22 @@ public class Graph {
 	}
 
 
-	public Node getNodes() {
+	public List<Node> getNodes() {
 		return nodes;
 	}
 
 
-	public void setNodes(Node nodes) {
+	public void setNodes(List<Node> nodes) {
 		this.nodes = nodes;
 	}
 
 
-	public Link getLinks() {
+	public List<Link> getLinks() {
 		return links;
 	}
 
 
-	public void setLinks(Link links) {
+	public void setLinks(List<Link> links) {
 		this.links = links;
 	}
 
