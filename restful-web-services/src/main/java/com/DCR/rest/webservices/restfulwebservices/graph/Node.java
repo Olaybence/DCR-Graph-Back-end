@@ -3,19 +3,22 @@ package com.DCR.rest.webservices.restfulwebservices.graph;
 public class Node {
     
     private String color;
-    private long key;
-    private String pend;
+    private String key;
+    private Boolean pending;
     private String text;
     
-    protected Node() {
-    	
+    public Node(String key) {
+    	this.color = "lightblue";
+    	this.key = key;
+    	this.pending = true;
+    	this.text = key;
     }
     
-    public Node(String color, long key, String pend, String text) {
+    public Node(String color, String key, Boolean pending, String text) {
     	super();
     	this.color = color;
     	this.key = key;
-    	this.pend = pend;
+    	this.pending = pending;
     	this.text = text;
     }
 
@@ -27,20 +30,20 @@ public class Node {
 		this.color = color;
 	}
 
-	public long getKey() {
+	public String getKey() {
 		return key;
 	}
 
-	public void setKey(long key) {
+	public void setKey(String key) {
 		this.key = key;
 	}
 
-	public String getPend() {
-		return pend;
+	public Boolean getPending() {
+		return this.pending;
 	}
 
-	public void setPend(String pend) {
-		this.pend = pend;
+	public void setPending(Boolean pend) {
+		this.pending = pending;
 	}
 
 	public String getText() {

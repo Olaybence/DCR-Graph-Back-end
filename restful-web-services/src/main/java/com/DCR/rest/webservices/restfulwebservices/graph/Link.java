@@ -4,21 +4,27 @@ package com.DCR.rest.webservices.restfulwebservices.graph;
 public class Link {
     
     private String from;
-    private String fromAr;
+    private String fromArrow;
     private String fromPort;
     private long key;
     private String to;
     private String toArrow;
     private String toPort;
     
-    protected Link() {
-    	
+    public Link() {
+    	this.from = "Alpha";
+    	this.fromArrow = "";
+    	this.fromPort = "r";
+    	this.key = -1;
+    	this.to = "Beta";
+    	this.toArrow = "BackSlash";
+    	this.toPort = "l";
     }
     
     public Link(String from, String fromAr, String fromPort, long key, 
     		String to, String toArrow, String toPort) {
     	this.from = from;
-    	this.fromAr  = fromAr;
+    	this.fromArrow  = fromAr;
     	this.fromPort = fromPort;
     	this.key = key;
     	this.to = to;
@@ -35,11 +41,11 @@ public class Link {
 	}
 
 	public String getFromAr() {
-		return fromAr;
+		return fromArrow;
 	}
 
-	public void setFromAr(String fromAr) {
-		this.fromAr = fromAr;
+	public void setFromAr(String fromArrow) {
+		this.fromArrow = fromArrow;
 	}
 
 	public String getFromPort() {
