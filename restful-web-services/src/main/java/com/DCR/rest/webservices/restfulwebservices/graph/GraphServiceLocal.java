@@ -7,13 +7,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class GraphServiceLocal {
 
 	private static List<Graph> graphsLocal = new ArrayList<Graph>();
 			
-	private static int idCounter = 0;	
+	private static long idCounter = 0;	
 	
 	static {
 		List mockupLinks = new ArrayList<Link>();

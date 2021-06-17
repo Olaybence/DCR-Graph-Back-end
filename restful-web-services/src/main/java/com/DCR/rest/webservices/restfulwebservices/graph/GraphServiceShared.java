@@ -13,7 +13,7 @@ public class GraphServiceShared {
 
 	private static List<Graph> graphsShared = new ArrayList<Graph>();
 			
-	private static int idCounter = 0;	
+	private static long idCounter = 0;	
 	
 	static {
 		//graphsShared.add(new Graph(0, "Sed vel ultrices", LocalDate.of(2020, 06, 06), LocalDateTime.now(), "desciption", "Mauris elit metus, posuere quis nisi a, sodales ornare odio.", new ArrayList(), new ArrayList(), new ArrayList(), 1, new Node(),new Link(),Graph.Location.LOCAL));

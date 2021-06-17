@@ -1,10 +1,15 @@
 package com.DCR.rest.webservices.restfulwebservices.graph;
 
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-
+@Entity
 public class Graph {
 	public enum Location {
 		LOCAL,
@@ -21,7 +26,10 @@ public class Graph {
 	//private List graphRelationData;
 	//private List changeLog;
 	
-	private long id;
+	@Id
+	@GeneratedValue
+	private Long id;
+	
 	private Location location;
 	private String name;
 	private LocalDate creationDate;
@@ -138,12 +146,12 @@ public class Graph {
 		return result;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
