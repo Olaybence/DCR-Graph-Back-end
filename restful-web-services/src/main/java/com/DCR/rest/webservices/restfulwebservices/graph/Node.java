@@ -42,7 +42,7 @@ public class Node {
 		return this.pending;
 	}
 
-	public void setPending(Boolean pend) {
+	public void setPending(Boolean pending) {
 		this.pending = pending;
 	}
 

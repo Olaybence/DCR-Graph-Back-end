@@ -61,8 +61,8 @@ public class Graph {
 		this.collaborators = collaborators;
 		this.roles = roles;
 		this.startRoles = startRoles;
-		this.nodes = nodes;
 		this.location = location;
+		this.nodes = nodes;
 		this.links = links;
 	}
 	

@@ -21,10 +21,10 @@ public class Link {
     	this.toPort = "l";
     }
     
-    public Link(String from, String fromAr, String fromPort, long key, 
+    public Link(String from, String fromArrow, String fromPort, long key, 
     		String to, String toArrow, String toPort) {
     	this.from = from;
-    	this.fromArrow  = fromAr;
+    	this.fromArrow  = fromArrow;
     	this.fromPort = fromPort;
     	this.key = key;
     	this.to = to;
@@ -40,11 +40,11 @@ public class Link {
 		this.from = from;
 	}
 
-	public String getFromAr() {
+	public String getFromArrow() {
 		return fromArrow;
 	}
 
-	public void setFromAr(String fromArrow) {
+	public void setFromArrow(String fromArrow) {
 		this.fromArrow = fromArrow;
 	}
 
