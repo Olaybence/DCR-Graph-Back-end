@@ -73,6 +73,17 @@ public class GraphResource {
 		return new ResponseEntity<Graph>(graph, HttpStatus.OK);
 	}
 	
+	
+	@DeleteMapping("/edit/local/{graphID}")
+	public ResponseEntity<Void> deleteGraph(@PathVariable String location, @PathVariable long graphID) {
+		Graph graph = graphService.deleteById(graphID);
+		if(graph!=null) {
+			return ResponseEntity.noContent().build();
+		}
+		return ResponseEntity.notFound().build();
+	}
+	
+	
 	//
 	//
 	//The following are placeholder functions
@@ -89,14 +100,6 @@ public class GraphResource {
 		return graphService.findById(graphID);
 	}
 		
-	@DeleteMapping("/edit/{location}/{graphID}")
-	public ResponseEntity<Void> deleteGraph(@PathVariable String location, @PathVariable long graphID) {
-		Graph graph = graphService.deleteById(graphID);
-		if(graph!=null) {
-			return ResponseEntity.noContent().build();
-		}
-		return ResponseEntity.notFound().build();
-	}
 		
 	@PutMapping("/edit/{location}/{graphID}")
 	public ResponseEntity<Graph> updateGraphOld(@PathVariable String location, @PathVariable long graphID, @RequestBody Graph graph) {
