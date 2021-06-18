@@ -1,31 +1,26 @@
 package com.DCR.rest.webservices.restfulwebservices.graph;
 
+//Imports
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+// Class definition of the graph
+// It is also declared as an entity which is used for database management
 @Entity
 public class Graph {
+	
+	// Enum for location
 	public enum Location {
 		LOCAL,
 		SHARED
 	};
 	
-	// private long graphID;
-	//private String username;
-	//private long creatorID;
-	//private String description;
-	//private Date creationDate;
-	//private Date lastOpened;
-	//private List collaborators;
-	//private List graphRelationData;
-	//private List changeLog;
-	
+	// Declarations of all graph variables
+	// Id is defined as the important variable for database management
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -43,22 +38,18 @@ public class Graph {
 	private List<Node> nodes;
 	private List<Link> links;
 	
+	// Declaration of a protected graph
 	protected Graph() {
 		
 	}
 			
-	
-	//public Graph(long graphID, String username, long creatorID, String description, Date creationDate, Date lastOpened, List collaborators, List graphRelationData, List changeLog) {
-	public Graph(long id, String name, LocalDate creationDate, LocalDateTime lastOpened, String description, String shortDescription, List<String> comments, 
-			List<String> collaborators, List<String> roles, long startRoles, List<Node> nodes, List<Link> links, Location location) {	
+	// Declaring a public graph 
+	public Graph(long id, String name, LocalDate creationDate, 
+			LocalDateTime lastOpened, String description, 
+			String shortDescription, List<String> comments, 
+			List<String> collaborators, List<String> roles, long startRoles,
+			List<Node> nodes, List<Link> links, Location location) {	
 		super();
-		//this.graphID = graphID;
-		//this.username = username;
-		//this.creatorID = creatorID;
-		//this.description = description;
-		//this.collaborators = collaborators;
-		//this.graphRelationData = graphRelationData;
-		//this.changeLog = changeLog;
 		this.id = id;
 		this.name = name;
 		this.creationDate = creationDate;
@@ -75,76 +66,15 @@ public class Graph {
 	}
 	
 	
-	//public long getGraphID() {
-	//	return graphID;
-	//}
-
-	//public void setGraphID(long graphID) {
-	//	this.graphID = graphID;
-	//}
-
-	//public long getCreatorID() {
-	//	return creatorID;
-	//}
-
-	//public void setCreatorID(long creatorID) {
-	//	this.creatorID = creatorID;
-	//}
-
-	//public List getCollaborators() {
-	//	return collaborators;
-	//}
-
-	//public void setCollaborators(List collaborators) {
-	//	this.collaborators = collaborators;
-	//}
-
-	//public List getGraphRelationData() {
-	//	return graphRelationData;
-	//}
-
-	//public void setGraphRelationData(List graphRelationData) {
-	//	this.graphRelationData = graphRelationData;
-	//}
-
-	//public List getChangeLog() {
-	//	return changeLog;
-	//}
-
-	//public void setChangeLog(List changeLog) {
-	//	this.changeLog = changeLog;
-	//}
-
-	//public String getUsername() {
-	//	return username;
-	//}
-	//public void setUsername(String username) {
-	//	this.username = username;
-	//}
-	//public String getDescription() {
-	//	return description;
-	//}
-	//public void setDescription(String description) {
-	//	this.description = description;
-	//}
-
+	// Getter- and Setter functions for all variables
 	public Location getLocation() {
 		return location;
 	}
-
 
 	public void setLocation(Location location) {
 		this.location = location;
 	}
 
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
-	}
 
 	public Long getId() {
 		return id;
@@ -262,6 +192,16 @@ public class Graph {
 	}
 
 
+	// Function for finding the hashCode determined by id
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+	
+	// Function for comparing
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

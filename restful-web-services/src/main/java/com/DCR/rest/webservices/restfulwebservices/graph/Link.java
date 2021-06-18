@@ -1,8 +1,9 @@
 package com.DCR.rest.webservices.restfulwebservices.graph;
 
-
+// Declaring the link class
 public class Link {
     
+	// Defining private variables
     private String from;
     private String fromArrow;
     private String fromPort;
@@ -11,6 +12,7 @@ public class Link {
     private String toArrow;
     private String toPort;
     
+    // Defining a public link with set variables
     public Link() {
     	this.from = "Alpha";
     	this.fromArrow = "";
@@ -21,6 +23,7 @@ public class Link {
     	this.toPort = "l";
     }
     
+    // Defining a public link for receiving input
     public Link(String from, String fromArrow, String fromPort, long key, 
     		String to, String toArrow, String toPort) {
     	this.from = from;
@@ -32,6 +35,7 @@ public class Link {
     	this.toPort = toPort;
     }
 
+    // Defining Getters and Setters for the variables
 	public String getFrom() {
 		return from;
 	}

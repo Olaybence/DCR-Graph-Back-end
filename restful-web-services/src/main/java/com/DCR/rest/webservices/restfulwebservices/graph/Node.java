@@ -1,12 +1,15 @@
 package com.DCR.rest.webservices.restfulwebservices.graph;
 
+// Defining a node class
 public class Node {
     
+	// Declaring private variables
     private String color;
     private String key;
     private Boolean pending;
     private String text;
     
+    // Definition of a node
     public Node(String key) {
     	this.color = "lightblue";
     	this.key = key;
@@ -14,6 +17,7 @@ public class Node {
     	this.text = key;
     }
     
+    // Definition of a node
     public Node(String color, String key, Boolean pending, String text) {
     	super();
     	this.color = color;
@@ -22,6 +26,7 @@ public class Node {
     	this.text = text;
     }
 
+    // Getter and Setter functions
 	public String getColor() {
 		return color;
 	}
