@@ -22,7 +22,7 @@ public class Link {
     	this.toArrow = "BackSlash";
     	this.toPort = "l";
     }
-    
+
     // Defining a public link for receiving input
     public Link(String from, String fromArrow, String fromPort, long key, 
     		String to, String toArrow, String toPort) {

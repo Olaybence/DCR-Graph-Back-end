@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 // Class definition of the graph
@@ -27,7 +26,7 @@ public class Graph {
 	
 	private Location location;
 	private String name;
-	private LocalDate creationDate;
+	private LocalDateTime creationDate;
 	private LocalDateTime lastOpened;
 	private String description;
 	private String shortDescription;
@@ -44,7 +43,7 @@ public class Graph {
 	}
 			
 	// Declaring a public graph 
-	public Graph(long id, String name, LocalDate creationDate, 
+	public Graph(long id, String name, LocalDateTime creationDate, 
 			LocalDateTime lastOpened, String description, 
 			String shortDescription, List<String> comments, 
 			List<String> collaborators, List<String> roles, long startRoles,
@@ -95,11 +94,11 @@ public class Graph {
 		this.name = name;
 	}
 	
-	public LocalDate getCreationDate() {
+	public LocalDateTime getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(LocalDate creationDate) {
+	public void setCreationDate(LocalDateTime creationDate) {
 		this.creationDate = creationDate;
 	}
 	
