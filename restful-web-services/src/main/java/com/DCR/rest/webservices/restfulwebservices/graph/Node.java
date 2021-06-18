@@ -8,6 +8,7 @@ public class Node {
     private String key;
     private Boolean pending;
     private String text;
+    private String loc;
     
     // Definition of a node
     public Node(String key) {
@@ -15,18 +16,28 @@ public class Node {
     	this.key = key;
     	this.pending = true;
     	this.text = key;
+    	this.loc = "0 0";
     }
     
     // Definition of a node
-    public Node(String color, String key, Boolean pending, String text) {
+    public Node(String color, String key, Boolean pending, String text, String loc) {
     	super();
     	this.color = color;
     	this.key = key;
     	this.pending = pending;
     	this.text = text;
+    	this.loc = loc;
     }
 
     // Getter and Setter functions
+    public String getLoc() {
+		return loc;
+	}
+
+	public void setLoc(String loc) {
+		this.loc = loc;
+	}
+
 	public String getColor() {
 		return color;
 	}
