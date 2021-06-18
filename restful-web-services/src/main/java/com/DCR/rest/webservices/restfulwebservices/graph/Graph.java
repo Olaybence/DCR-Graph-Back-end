@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 // Class definition of the graph
 // It is also declared as an entity which is used for database management
-@Entity
+// @Entity
 public class Graph {
 	
 	// Enum for location
@@ -21,8 +21,8 @@ public class Graph {
 	
 	// Declarations of all graph variables
 	// Id is defined as the important variable for database management
-	@Id
-	@GeneratedValue
+	// @Id
+	// @GeneratedValue
 	private Long id;
 	
 	private Location location;
