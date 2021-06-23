@@ -1,19 +1,30 @@
 package com.DCR.rest.webservices.restfulwebservices.graph;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 // Declaring the link class
+@Entity
 public class Link {
     
+	@Id
+	private long key;
+	
+	
+	//private Graph graph;
+
 	// Defining private variables
     private String from;
     private String fromArrow;
     private String fromPort;
-    private long key;
+    
     private String to;
     private String toArrow;
     private String toPort;
     
     // Defining a public link with set variables
-    public Link() {
+    /*public Link() {
     	this.from = "Alpha";
     	this.fromArrow = "";
     	this.fromPort = "r";
@@ -21,7 +32,7 @@ public class Link {
     	this.to = "Beta";
     	this.toArrow = "BackSlash";
     	this.toPort = "l";
-    }
+    }*/
 
     // Defining a public link for receiving input
     public Link(String from, String fromArrow, String fromPort, long key, 
@@ -34,6 +45,15 @@ public class Link {
     	this.toArrow = toArrow;
     	this.toPort = toPort;
     }
+    
+    /*@ManyToOne(targetEntity = Graph.class)
+    public Graph getGraph() {
+        return graph;
+    }
+
+    public void setGraph(Graph graph) {
+        this.graph = graph;
+    }*/
 
     // Defining Getters and Setters for the variables
 	public String getFrom() {

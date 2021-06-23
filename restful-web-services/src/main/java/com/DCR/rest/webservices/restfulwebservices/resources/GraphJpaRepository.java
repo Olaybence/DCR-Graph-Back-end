@@ -1,4 +1,4 @@
-package com.DCR.rest.webservices.restfulwebservices.graph;
+package com.DCR.rest.webservices.restfulwebservices.resources;
 /*
 // Imports
 import java.util.List;

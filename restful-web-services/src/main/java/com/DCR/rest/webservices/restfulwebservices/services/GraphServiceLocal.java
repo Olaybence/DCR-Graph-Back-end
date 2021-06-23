@@ -1,4 +1,4 @@
-package com.DCR.rest.webservices.restfulwebservices.graph;
+package com.DCR.rest.webservices.restfulwebservices.services;
 
 // Imports
 import java.time.LocalDate;
@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
+
+import com.DCR.rest.webservices.restfulwebservices.graph.*;
 
 // GraphServicelocal class, it is declared as a service
 @Service
@@ -119,7 +121,8 @@ public class GraphServiceLocal {
 		mockupNodesGraph3.add(new Node("red","032",true,"Emil","65 5"));
 		mockupNodesGraph3.add(new Node("green","0222",true,"Bence","100 -303"));
 		mockupNodesGraph3.add(new Node("white","05",false,"New Node","-217 -287.75"));
-
+		
+		/*Too long list
 		List mockupLinksGraph3 = new ArrayList<Link>();
 		mockupLinksGraph3.add(new Link("0","","r",-1,"022","BackSlash","l"));
 		mockupLinksGraph3.add(new Link("0","","r",-2,"02","PlusCircle","l"));
@@ -157,6 +160,7 @@ public class GraphServiceLocal {
 		mockupLinksGraph4.add(new Link("03","","r",-4,"05","BackSlash","l"));
 		mockupLinksGraph4.add(new Link("03","","r",-5,"06","PlusCircle","l"));
 
+		
 		graphsLocal.add(new Graph(4, // id
 		        "Workflow", // name
 		        LocalDateTime.of(2020,03,17,19,31), // creationDate
@@ -190,7 +194,7 @@ public class GraphServiceLocal {
 		mockupLinksGraph5.add(new Link("042","","r",-5,"04","BackSlash","l"));
 		mockupLinksGraph5.add(new Link("032","","r",-6,"022","BackSlash","l"));
 
-		graphsLocal.add(new Graph(5, // id
+		graphsLocal.add(new Graph(4, // id
 		        "Design", // name
 		        LocalDateTime.of(2021,03,17,21,47), // creationDate
 		        LocalDateTime.of(2021,05,20,01,31), // lastOpened
@@ -202,9 +206,45 @@ public class GraphServiceLocal {
 		        0, // startRoles
 		        mockupNodesGraph5, // nodes
 		        mockupLinksGraph5, // links
-		        Graph.Location.LOCAL)); // location
-		}
+		        Graph.Location.LOCAL)); // location*/
+		
 
+		List mockupNodesGraph6 = new ArrayList<Node>();
+		mockupNodesGraph6.add(new Node("grey","0",false,"Exclusion","-219.5 -185.75")); 
+		mockupNodesGraph6.add(new Node("grey","03",false,"Response","-217.5 -117.75"));
+		mockupNodesGraph6.add(new Node("grey","04",true,"Inclusion","-215.5 -54.75"));
+		mockupNodesGraph6.add(new Node("grey","05",false,"Spawn","-213.5 23.25"));
+		mockupNodesGraph6.add(new Node("grey","052",true,"Milestone","-219.5 71.25"));
+
+		mockupNodesGraph6.add(new Node("white","02",false,"Exclusion","21.5 -185.75"));
+		mockupNodesGraph6.add(new Node("white","022",false,"Response","23.5 -117.75"));
+		mockupNodesGraph6.add(new Node("white","023",true,"Inclusion","25.5 -54.75"));
+		mockupNodesGraph6.add(new Node("white","024",false,"Spawn","39.5 23.25"));
+		mockupNodesGraph6.add(new Node("white","0242",true,"Milestone","21.5 71.25"));
+	
+		
+		List mockupLinksGraph6 = new ArrayList<Link>();
+		mockupLinksGraph6.add(new Link("0","","r",-1,"02","BackSlash","l"));
+		mockupLinksGraph6.add(new Link("03","Circle","r",-2,"022","OpenTriangle","l"));
+		mockupLinksGraph6.add(new Link("04","","r",-3,"023","PlusCircle","l"));
+		mockupLinksGraph6.add(new Link("05","","r",-4,"024","Block","l"));
+		mockupLinksGraph6.add(new Link("052","","r",-5,"0242","Diamond","l"));
+			
+			graphsLocal.add(new Graph(3, // id
+			        "Arrows Edited", // name
+			        LocalDateTime.of(2021,06,21,20,48), // creationDate
+			        LocalDateTime.of(2021,06,21,20,48), // lastOpened
+			        "Working", // description
+			        "Working", // shortDescription
+			        new ArrayList(), // comments
+			        new ArrayList(), // collaborators
+			        new ArrayList(), // roles
+			        0, // startRoles
+			        mockupNodesGraph6, // nodes
+			        mockupLinksGraph6, // links
+			        Graph.Location.LOCAL)); // location
+	}
+	
 	// Function for finding all local graphs
 	public List<Graph> findAll() {
 		return graphsLocal;

@@ -1,11 +1,20 @@
 package com.DCR.rest.webservices.restfulwebservices.graph;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 // Defining a node class
+@Entity
 public class Node {
+	
+	@Id
+	private String key;
+	
+	//private Graph graph;
     
 	// Declaring private variables
     private String color;
-    private String key;
     private Boolean pending;
     private String text;
     private String loc;
@@ -28,8 +37,19 @@ public class Node {
     	this.text = text;
     	this.loc = loc;
     }
+    
 
     // Getter and Setter functions
+    
+    /*@ManyToOne(targetEntity = Graph.class)
+    public Graph getGraph() {
+        return graph;
+    }
+
+    public void setGraph(Graph graph) {
+        this.graph = graph;
+    }*/
+
     public String getLoc() {
 		return loc;
 	}

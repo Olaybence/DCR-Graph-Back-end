@@ -2,14 +2,20 @@ package com.DCR.rest.webservices.restfulwebservices.graph;
 
 //Imports
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import java.time.LocalDateTime;
 
 // Class definition of the graph
 // It is also declared as an entity which is used for database management
-// @Entity
+//@Entity
 public class Graph {
 	
 	// Enum for location
@@ -20,8 +26,8 @@ public class Graph {
 	
 	// Declarations of all graph variables
 	// Id is defined as the important variable for database management
-	// @Id
-	// @GeneratedValue
+	//@Id
+	//@GeneratedValue
 	private Long id;
 	
 	private Location location;
@@ -30,11 +36,25 @@ public class Graph {
 	private LocalDateTime lastOpened;
 	private String description;
 	private String shortDescription;
+	
+	//@Column
+    //@ElementCollection(targetClass=String.class)
 	private List<String> comments;
+	
+	//@Column
+    //@ElementCollection(targetClass=String.class)
 	private List<String> collaborators;
+	
+	//@Column
+    //@ElementCollection(targetClass=String.class)
 	private List<String> roles;
+	
 	private long startRoles;
+	
+	//@OneToMany(targetEntity=Node.class, mappedBy="graph", fetch=FetchType.EAGER)
 	private List<Node> nodes;
+	
+	//@OneToMany(targetEntity=Link.class, mappedBy="graph", fetch=FetchType.EAGER)
 	private List<Link> links;
 	
 	// Declaration of a protected graph
@@ -171,6 +191,7 @@ public class Graph {
 	}
 
 
+	//@OneToMany(targetEntity=Node.class, mappedBy="nodes", fetch=FetchType.EAGER)
 	public List<Node> getNodes() {
 		return nodes;
 	}
@@ -181,6 +202,7 @@ public class Graph {
 	}
 
 
+	//@OneToMany(targetEntity=Link.class, mappedBy="links", fetch=FetchType.EAGER)
 	public List<Link> getLinks() {
 		return links;
 	}
